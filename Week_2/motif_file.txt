@@ -1,0 +1,2 @@
+#this line has motif1 in it 
+# this line has motif2 only
