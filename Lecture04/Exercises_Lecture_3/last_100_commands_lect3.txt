@@ -1,0 +1,100 @@
+  308  man greb
+  309  man grep
+  310  grep -v 'name' example_people_data.tsv | awk 'BEGIN{FS='\t';}'
+  311  grep -v 'name' example_people_data.tsv | awk 'BEGIN{FS='\t';}{if(NF==7){print$0;}}'| wc -l
+  312  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0;}}'| wc -l
+  313  awk example_people_data.tsv 'BEGIN{FS=="\t";}{if(NF==7){print $0;}}'| wc -l
+  314  awk 'BEGIN{FS=="\t";}{if(NF==7){print $0;}}' example_people_data.tsv | wc -l
+  315  awk 'BEGIN{FS=="\t";}{if(NF==7){print $0;}}' example_people_data.tsv
+  316  awk 'BEGIN{FS=="\t";}{if(NF==7){print $0;}}' example_people_data.tsv| wc -l
+  317  grep example_people_data.tsv| awk 'BEGIN{FS=="\t";}{if(NF==7){print $0;}}' | wc -l
+  318  grep example_people_data.tsv | wc -l
+  319  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS=="\t";}{if(NF==7){print$0}}'| wc-l
+  320  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS=="\t";}{if(NF==7){print$0}}'| wc -l
+  321  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS=="\t";}{if(NF==7){print$0}}'| wc -l
+  322  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0}}'| wc -l
+  323  man FS
+  324  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0}}'
+  325  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0}}'| wc -l
+  326  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0}}'| wc -l
+  327  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0}}'
+  328  grep -v "email" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF=7){print$0}}'
+  329  grep -v "email" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF=7){print$0;}}'
+  330  grep -v "email" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF=7){print$0;}}'| wc -l
+  331  grep -v "email" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0;}}'| wc -l
+  332  grep -v "email" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0;}}'
+  333  grep -v "email" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0;}}'| wc -l
+  334  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0;}}'| wc -l
+  335  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $1 !=""){print$0;}}'| wc -l
+  336  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if($0 !=""){print$0;}}'| wc -l
+  337  grep -v 'name' example_people_data.tsv | awk 'BEGIN{FS='\t';}{if($0 !=''){print$0;}}'| wc -l
+  338  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if($6<=1994){print$0}}'| wc -l
+  339  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $6<=1994){print$0}}'| wc -l
+  340  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $1=*"Jan"*){print$0}}'| wc -l
+  341  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $1="Jan"){print$0}}'| wc -l
+  342  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $1=="Jan"){print$0}}'| wc -l
+  343  cat $1 example_people_data.tsv 
+  344  cut -f1 example_people_data.tsv | grep -wc "Jan"
+  345  cut -f1 example_people_data.tsv | grep -wc "^Jan"
+  346  cut -f1 example_people_data.tsv | grep "^Jan"
+  347  cut -f1 example_people_data.tsv | grep -wc "^Jan"
+  348  cut -f1 example_people_data.tsv | grep "^Jan" | wc -l
+  349  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print$0}}'| uniq
+  350  cat example_people_data.tsv | cut -f 7 | uniq -wc
+  351  cat example_people_data.tsv | cut -f 7 | uniq | wc -l
+  352  cat example_people_data.tsv | cut -f 7 
+  353  cat example_people_data.tsv | sort| uniq -c
+  354* cat example_people_data.tsv | cut -f 7 | uniq -c
+  355  cat example_people_data.tsv | sort | cut -f 7 | uniq -c | sort -k1,1nr
+  356  cat example_people_data.tsv | sort | cut -f 7 | uniq -c | sort -k1,1nr 
+  357  cut -f 7 example_people_data.tsv \
+  358  cut -f 7 example_people_data.tsv | uniq -c | sort -k1,1nr |head -n 5
+  359  cut -f 7 example_people_data.tsv |\ uniq -c | sort -k1,1nr |head -n 5
+  360  cut -f 7 example_people_data.tsv |\ 
+  361  cut -f 7 example_people_data.tsv | \ 
+  362  cut -f 7 example_people_data.tsv | sort | uniq -c | sort -k1,1nr | head -5
+  363  cat example_people_data.tsv | awk 'BEGIN{FS="\t";} \'
+  364  cat example_people_data.tsv | \awk 'BEGIN{FS="\t";} \'
+  365  cat example_people_data.tsv | awk 'BEGIN{FS="\t"}(if $7 =="Mozambique"){grep $6<=1974}'| wc -l
+  366  cat example_people_data.tsv | awk 'BEGIN{FS="\t"}{(if $7 =="Mozambique"){grep $6<=1974}}'| wc -l
+  367  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if($7=="Mozambique"){grep $6 <=1974;}}' | wc -l
+  368  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if($7=="Mozambique"){grep $6 <=1974;}{print $0}}'
+  369  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if($7=="Mozambique"){grep $6 <=1974;}{print $0}}'| wc -l
+  370  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $7="Mozambique"){grep $6 <=1974;}{print $0}}'| wc -l
+  371  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $7="Mozambique"){print $0}}'| wc -l
+  372* grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0}}'| wc -l
+  373  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $7="Mozambique"){print $0}}'
+  374  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7 && $7=="Mozambique"){print $0}}'| wc -l
+  375  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0}}' | head -n 5
+  376  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0}}' | sort -k72,2nr
+  377  grep -v "name" example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0}}' | sort -k7,2nr
+  378  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0}}' | head -n 3  
+  379  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0}}' | head -n 5  
+  380  cat example_people_data.tsv | awk 'BEGIN{FS="\t";}{if(NF==7){print $0}}' | head -n 3  
+  381  grep "edu$" example_people_data.tsv 
+  382  grep "edu$" example_people_data.tsv | print $0
+  383  grep "edu$" example_people_data.tsv | wc -l
+  384  grep "edu" example_people_data.tsv | wc -l
+  385  grep "edu" example_people_data.tsv | print $0
+  386  grep "edu" example_people_data.tsv
+  387  grep "edu" example_people_data.tsv | sort -k7,7 -k1,1r
+  388  grep "edu" example_people_data.tsv | sort -k7,7 -k1,1r
+  389  grep "edu" example_people_data.tsv | sort -k7,7 -k1,1r | wc -l
+  390  cut -f2 example_people_data.tsv | grep "edu$" | wc -l
+  391  cut -f2 example_people_data.tsv | grep ".edu$" | wc -l
+  392  grep "edu" example_people_data.tsv | wc -l
+  393  cut -f2 example_people_data.tsv | grep ".edu$" | wc -l
+  394  cut -f2 example_people_data.tsv | grep "\.edu$" | wc -l
+  395  cut -f2 example_people_data.tsv | grep "\.edu$" | sort -k7,7 -k1,1r
+  396  grep "/.edu" example_people_data.tsv | wc -l
+  397  grep "edu$" example_people_data.tsv | wc -l
+  398  grep "edu" example_people_data.tsv | wc -l
+  399* 
+  400  grep "\.edu" example_people_data.tsv | wc -l
+  401  grep "\.edu" example_people_data.tsv | wc -l
+  402  grep "\.edu" example_people_data.tsv | sort -t $\'t' -k7,7 -k1,1r
+  403  grep "\.edu" example_people_data.tsv | sort -t $'\t' -k7,7 -k1,1r
+  404  grep "\.edu" example_people_data.tsv | sort -t $"\t" -k7,7 -k1,1r
+  405  grep "\.edu" example_people_data.tsv | sort -t $'\t' -k7,7 -k1,1r
+  406  ls
+  407  history | tail -n 100 >last_100_commands.txt
