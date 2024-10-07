@@ -1,5 +1,0 @@
-/usr/bin/fastqc
-#!/bin/bash
-
-# set path to fastqc executable
-fastqc_path = 
