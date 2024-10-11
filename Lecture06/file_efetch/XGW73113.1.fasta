@@ -1,0 +1,6 @@
+--2024-10-08 11:54:37--  https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=protein&id=XGW73113.1%0D&strand=1&rettype=fasta&retmode=text
+Resolving eutils.ncbi.nlm.nih.gov (eutils.ncbi.nlm.nih.gov)... 130.14.29.110, 2607:f220:41e:4290::110
+Connecting to eutils.ncbi.nlm.nih.gov (eutils.ncbi.nlm.nih.gov)|130.14.29.110|:443... connected.
+HTTP request sent, awaiting response... 400 Bad Request
+2024-10-08 11:54:37 ERROR 400: Bad Request.
+
