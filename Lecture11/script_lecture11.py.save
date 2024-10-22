@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+#define our variable
+dna_seq = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
+print("dna_seq")
+length_dna_seq = len("dna_seq")
+print(length_dna_seq)
+
+#1.A calculate the num of A
+a_count = dna_seq.count("A")
+print("The number of A nucleotides in $dna_seq: " + str("a_count")print("t_count")
+)
+#1.B calculate the num of T
+t_count = dna_seq.count("T")
+print("t_count")
+#1.c add them up and divide by length of seq
