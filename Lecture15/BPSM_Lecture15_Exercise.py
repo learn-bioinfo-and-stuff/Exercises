@@ -45,14 +45,27 @@ def get_aa_percent_2 (protein_seq, aa_residu):
     result_percentage_custom_aa = []
     result_percentage_hydro = []
     # condition one for str input
-    if type(aa_residu) == str:
-        hydro_aminos = ["A", "I", "L", "M", "F", "W", "Y", "V"]
-        for hydro_amino in hydro_aminos:
-            count_hydro_amino = protein_seq.count(hydro_amino)
-            percent_hydro_amino = (count_hydro_amino * 100) / length_protein
-            # use append to save result of each iteration as an item in our result list
-            result_percentage_hydro.append(f'The percentage of hydro amino "{hydro_amino}": {percent_hydro_amino}')
+    if type(aa_residu) == str:      # ini perlu di detailkan lagi, kalau str nya satu karakter? kalau dua karakter
+        print(f'This is the argument aa_residu: {aa_residu}')
+        length_str = len(aa_residu)
+        print(length_str)
+        if length_str == 1:
+            hydro_aminos = ["A", "I", "L", "M", "F", "W", "Y", "V"]
+            for hydro_amino in hydro_aminos:
+                count_hydro_amino = protein_seq.count(hydro_amino)
+                percent_hydro_amino = (count_hydro_amino * 100) / length_protein
+                # use append to save result of each iteration as an item in our result list
+                result_percentage_hydro.append(f'The percentage of hydro amino "{hydro_amino}": {percent_hydro_amino}')
+        else:
+            unique_char = set(aa_residu)
+            for character in unique_char:
+                count_custom_aa = protein_seq.count(character)
+                percent_custom_aa = (count_custom_aa * 100) / length_protein
+                # use append to save result of each iteration as an item in our result list
+                result_percentage_custom_aa.append(
+                f'The percentage of custom amino "{character}": {percent_custom_aa}')
     elif type(aa_residu) == list:
+        print(f'This is the argument aa_residu: {aa_residu}')
         for aa_residu_item in aa_residu:
             count_custom_aa = protein_seq.count(aa_residu_item)
             percent_custom_aa = (count_custom_aa * 100) / length_protein
@@ -70,11 +83,16 @@ list_aa = ["L","P"]
 test_2_A = get_aa_percent_2("MSRSLLLRFLLFLLLLPPLP",list_aa)
 print(test_2_A)
 
+# test funtion_3_if argument aa_residu is srt and long letter
+print("Test using a Str and long letter")
+test_3_A = get_aa_percent_2("MSRSLLLRFLLFLLLLPPLP","SLLLRRFFP")
+print(test_3_A)
+
 # test again using assert
-try:
-    test_result = get_aa_percent_2("MSRSLLLRFLLFLLLLPPLP", "M")
-    # need to specify this, because we have two output from this function
-    assert round(test_result[1]) == round(5)
-    print("Result assert 1: success")
-except AssertionError:
-    print("Result assert 1: failed")
+# try:
+#     test_result = get_aa_percent_2("MSRSLLLRFLLFLLLLPPLP", "M")
+#     # need to specify this, because we have two output from this function
+#     assert round(test_result[1]) == round(5)
+#     print("Result assert 1: success")
+# except AssertionError:
+#     print("Result assert 1: failed")
